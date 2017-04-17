@@ -41,6 +41,15 @@ body,#root{
 }
 #root{
     position:relative;
+    .rootWrap{
+        width:100%;
+        //height:100%;
+    }
+    .rootWrap1{
+        //position:absolute;
+        //top:0px;
+        //left:100%;
+    }
 }
 .headerbg{
     background:#EFEFF0;
@@ -111,7 +120,7 @@ article{
   line-height:33px;
   border:1px solid #f5f5f5;
   color:rgba(0,0,0,0.4);
-  background:url(http://image.read.duokan.com/mfsv2/download/fdsc3/p01dSYLeWtSR/tY73MgTfVw7UAS.png) no-repeat 8px center;
+  background:url("http://image.read.duokan.com/mfsv2/download/fdsc3/p01dSYLeWtSR/tY73MgTfVw7UAS.png") no-repeat 8px center;
   background-size:14px;
 }
 .banner{
@@ -357,4 +366,10 @@ article{
     padding:5px 0px;
     font-size:12px;
     color:rgba(0,0,0,0.4);
+}
+.fade-enter-active .rootWrap, .fade-leave-active .rootWrap {
+  transition: opacity .5s
+}
+.fade-enter .rootWrap, .fade-leave-active .rootWrap {
+  opacity: 0
 }
