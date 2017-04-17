@@ -48,10 +48,14 @@ window.vm = new Vue({
 		        preventDefault: false,
 		        fadeScrollbars: true
 			});
+			myScroll.refresh();
 			document.addEventListener('touchmove', function (e) {
 				e.preventDefault(); 
 			}, false);
 			document.addEventListener('mousewheel', function (e) {
+				myScroll.refresh();
+			}, false);
+			document.addEventListener('touchstart', function (e) {
 				myScroll.refresh();
 			}, false);
 			var pullDown = $('#PullDown');
@@ -60,6 +64,8 @@ window.vm = new Vue({
 			myScroll.on('scroll', function() {
 				
 			    var height = this.y,bottomHeight = this.maxScrollY - height;
+			    console.log("height:"+height);
+			    console.log()
 				
 		        // 控制下拉显示
 		        if (height >= 30) {
@@ -71,16 +77,20 @@ window.vm = new Vue({
 		            isPulled = true;
 		            return;
 		        }
-		
+				var timer=null;
 		        // 控制上拉显示
 		        if (bottomHeight >= 30) {
 		            pullUp.show();
-		            setTimeout(function(){
-		            	vm.specialLimit+=5;
-		            	if(vm.specialLimit==vm.special.data.length){
+		            if(vm.specialLimit>=vm.special.data.length){
 		            		pullUp.innerHTML="暂无数据";
+		            		clearTimeout(timer);
 		            		return;
-		            	}
+		            }
+		            
+		            time=setTimeout(function(){
+		            	console.log(vm.specialLimit>=vm.special.data.length);
+		            	
+		            	vm.specialLimit+=5;
 		            	if(vm.specialLimit+5>=vm.special.data.length){
 		            		vm.specialLimit=vm.special.data.length;	
 		            	}else{
@@ -94,9 +104,10 @@ window.vm = new Vue({
 		        }
 			})
 			myScroll.on('scrollEnd', function() { // 滚动结束
+				myScroll.refresh();
 			    if (isPulled) { // 如果达到触发条件，则执行加载
 			        isPulled = false;
-			        vm.$forceUpdate()
+			        vm.$forceUpdate();
 			    }
 			});	
 		})

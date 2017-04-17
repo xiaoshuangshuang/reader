@@ -28,8 +28,13 @@ body,
 #root {
   position: relative;
 }
-#root .rootWrap {
+#root .rootWrap,
+#root #myscroll {
   width: 100%;
+  height: 100%;
+}
+#smain article {
+  border: 0px;
 }
 .headerbg {
   background: #EFEFF0;
@@ -39,7 +44,8 @@ body,
   border-bottom: 1px solid #dddddd;
   display: -webkit-box;
   display: -moz-box;
-  display: -ms-box;
+  position: relative;
+  z-index: 999;
 }
 .headerbg .header-checkin {
   background: url(http://image.read.duokan.com/mfsv2/download/s010/p01O5K5DzsAZ/2ZODzjwkRQh7l3.png) center no-repeat;

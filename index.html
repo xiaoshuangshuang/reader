@@ -207,7 +207,7 @@
 						<article class="showByList">
 							<ul class="recommand-list">
 								<li v-for="(item,index) in filterGirl">
-									<a class="booksInd" href="">
+									<a v-if="index<=3" class="booksInd" href="">
 										<img alt="item.title" :src="item.cover">
 										<div class="booKDes">
 											<h3 class="bookTitle" v-text="item.title"></h3>
