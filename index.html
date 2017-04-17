@@ -11,416 +11,201 @@
 <body>
 	<div id="root">
 		<header class="headerbg">
-			
+			<em class="header-checkin"></em>
+			<div class="headerTab">
+				<div class="headerTabWrap">
+					<div class="tab" >书城</div>
+					<div class="tab">书架</div>
+				</div>
+			</div>
+			<em class="headerUser"></em>
 		</header>
-		<section class="main">
-			<article id="topHome">
-				<div id="search">输入书名/关键字</div>
-				<div class="banner ">
-					<div class="">
-						<a href="">
-							<img class="cover" src="http://t1.market.xiaomi.com/thumbnail/jpeg/l640/Duokan/0e7a88448e66d41e803d3b6b276c04e48911c788c?">
-						</a>
-					</div>
-				</div>
-				<ul class="topHomeBtn">
-					<li data-href="#page=channel&amp;id=371" data-title="免费">
-						<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p015iBxwdkmU/5wc5uzYhLZ7iVa.png">
-						<p class="top-home__des">免费</p>
-					</li>
-					<li data-href="#page=channel&amp;id=370" data-title="女生">
-						<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01LWZmXGCpy/aSrSq6Llgt9PqE.png">
-						<p class="top-home__des">女生</p>
-					</li>
-					<li data-href="#page=channel&amp;id=369" data-title="男生">
-						<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01lq7mbkaEJ/OGlv1em8buXDgB.png">
-						<p class="top-home__des">男生</p>
-					</li>
-					<li data-href="/hs/market/cate" data-title="分类">
-						<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01pz5NtyRI0/2ENONnvOg23NXM.png">
-						<p class="top-home__des">分类</p>
-					</li>
-					<li data-href="/hs/market/rank" data-title="排行">
-						<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p010kK7M5VyH/8kPz9nKvRXyu1k.png">
-							<p class="top-home__des">排行</p>
-					</li>
-				</ul>
-			</article>
-			<article id="hot"  class="showByTabel">
-				<h1>本周最火</h1>
-				<ul class="hotTable">
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
+		<section class="main" id="main" >
+				<div>
+					<div id="PullDown" class="scroller-pullDown" style="display: none;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring">
+							<rect x="0" y="0" width="100" height="100" fill="none" class="bk"/>
+							<circle cx="50" cy="50" r="40" stroke-dasharray="163.36281798666926 87.9645943005142" stroke="#ddd" fill="none" stroke-width="20" transform="rotate(80.1696 50 50)">
+								<animateTransform attributeName="transform" type="rotate" values="0 50 50;180 50 50;360 50 50;" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite" begin="0s"/>
+							</circle>
+						</svg>
+			            <p id="pullDown-msg" class="pull-down-msg">下拉刷新</p>
+			      	</div>
+					<article id="topHome">
+						<div id="search">输入书名/关键字</div>
+						<div class="banner ">
+							<div class="">
+								<a href="">
+									<img class="cover" src="http://t1.market.xiaomi.com/thumbnail/jpeg/l640/Duokan/0e7a88448e66d41e803d3b6b276c04e48911c788c?">
+								</a>
 							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-				</ul>
-				<a class="more">查看更多</a>
-			</article>
-			<article id="recommand" class="showByList">
-				<h1>
-					<a>重磅推荐 <b class="brand">推</b></a>
-					<a class="right"><b>男</b><b>女</b></a>
-				</h1>
-				<ul class="recommand-list">
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="bookAbout" href="">
-							<span class="bookIndex">02</span>
-							<span class="bookTitle">狂武战帝</span>
-							<span class="bookAuthor">被罚站的豆豆</span>
-						</a>
-					</li>
-					<li>
-						<a class="bookAbout" href="">
-							<span class="bookIndex">02</span>
-							<span class="bookTitle">狂武战帝</span>
-							<span class="bookAuthor">被罚站的豆豆</span>
-						</a>
-					</li>
-					<li>
-						<a class="bookAbout" href="">
-							<span class="bookIndex">02</span>
-							<span class="bookTitle">狂武战帝</span>
-							<span class="bookAuthor">被罚站的豆豆</span>
-						</a>
-					</li>
-					<li>
-						<a class="bookAbout" href="">
-							<span class="bookIndex">02</span>
-							<span class="bookTitle">狂武战帝</span>
-							<span class="bookAuthor">被罚站的豆豆</span>
-						</a>
-					</li>
-				</ul>
-				<div class="displayBox">
-					<a href="" class="more">换一换</a>
-					<a href="" class="more">查看全部</a>
-				</div>
-			</article>
-			<article id="girlLike" class="showByList">
-				<h1>
-					<a>女生最爱</a>
-				</h1>
-				<ul class="recommand-list">
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-				</ul>
-				<div class="displayBox">
-					<a href="" class="more">换一换</a>
-					<a href="" class="more">查看全部</a>
-				</div>
-			</article>
-			<article id="boyLike" class="showByList">
-				<h1>
-					<a>男生最爱</a>
-				</h1>
-				<ul class="recommand-list">
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-				</ul>
-				<div class="displayBox">
-					<a href="" class="more">换一换</a>
-					<a href="" class="more">查看全部</a>
-				</div>
-			</article>
-			<article id="free"  class="showByTabel">
-				<h1>限时免费</h1>
-				<ul class="hotTable">
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<div class="book-cover" data-id="42312" id="Tag__4">
-								<img alt="都市之最强纨绔" src="http://cover.read.duokan.com/mfsv2/download/s010/p01xhqsIjIq3/ITWFWhstnrNOb9.jpg!s">
-							</div>
-							<h3 class="bookName">都市之最强纨绔子弟</h3>
-						</a>
-					</li>
-				</ul>
-				<a class="more">查看更多</a>
-			</article>
-			<article id="all" class="showByList">
-				<ul class="recommand-list">
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a class="booksInd" href="">
-							<img alt="狼性老公，求轻宠！" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01m3cf33Pd0/4AdDVTYQ5quCnI.jpg!s">
-							<div class="booKDes">
-								<h3 class="bookTitle">我的姥爷是盗墓贼</h3>
-								<p class="bookAuthor">无双</p>
-								<p class="bookInfo">九十年代末中国东北物探队十几位专家在走山客董爷的带领下踏入了大兴安岭这片秘境。一个星期后，只有董爷孤...</p>
-								<div class="bookType">
-									<b>寻墓探险</b>
-									<b>灵异悬疑</b>
-									<b>475万字</b>
-								</div>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</article>
+						</div>
+						<ul class="topHomeBtn">
+							<li data-href="#page=channel&amp;id=371" data-title="免费">
+								<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p015iBxwdkmU/5wc5uzYhLZ7iVa.png">
+								<p class="top-home__des">免费</p>
+							</li>
+							<li data-href="#page=channel&amp;id=370" data-title="女生">
+								<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01LWZmXGCpy/aSrSq6Llgt9PqE.png">
+								<p class="top-home__des">女生</p>
+							</li>
+							<li data-href="#page=channel&amp;id=369" data-title="男生">
+								<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01lq7mbkaEJ/OGlv1em8buXDgB.png">
+								<p class="top-home__des">男生</p>
+							</li>
+							<li data-href="/hs/market/cate" data-title="分类">
+								<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01pz5NtyRI0/2ENONnvOg23NXM.png">
+								<p class="top-home__des">分类</p>
+							</li>
+							<li data-href="/hs/market/rank" data-title="排行">
+								<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p010kK7M5VyH/8kPz9nKvRXyu1k.png">
+									<p class="top-home__des">排行</p>
+							</li>
+						</ul>
+					</article>
+					<article id="hot"  class="showByTabel">
+						<h1 v-text="hotBookList.title"></h1>
+						<ul class="hotTable">
+							<li v-for="(item,index) in hotBookList.data">
+								<a href="">
+									<div class="book-cover" data-id="42312" id="Tag__4">
+										<img alt="都市之最强纨绔" :src="item.cover">
+									</div>
+									<h3 class="bookName" v-text="item.title"></h3>
+								</a>
+							</li>
+						</ul>
+						<a class="more">查看更多</a>
+					</article>
+					<article id="recommand" class="showByList">
+						<h1>
+							<a>{{recommand.title}} <b class="brand">推</b></a>
+							<a class="right"><b>男</b><b>女</b></a>
+						</h1>
+						<ul class="recommand-list">
+							<li v-for="(item,index) in filteredRItems">
+								<a v-if="index===0" class="booksInd" href="">
+									<img alt="item.title" :src="item.cover">
+									<div class="booKDes">
+										<h3 class="bookTitle" v-text="item.title"></h3>
+										<p class="bookAuthor" v-text="item.authors">无双</p>
+										<p class="bookInfo" v-text="item.summary"></p>
+										<div class="bookType">
+											<b  v-for="tag in item.categories" v-text="tag.label"></b>
+										</div>
+									</div>
+								</a>
+								<a v-else="index !==0" class="bookAbout" href="">
+									<span class="bookIndex" v-text="index">02</span>
+									<span class="bookTitle" v-text="item.title">狂武战帝</span>
+									<span class="bookAuthor" v-text="item.authors">被罚站的豆豆</span>
+								</a>
+							</li>
+						</ul>
+						<div class="displayBox">
+							<a href="" class="more">换一换</a>
+							<a href="" class="more">查看全部</a>
+						</div>
+					</article>
+					<article id="girlLike" class="showByList">
+						<h1>
+							<a v-text="girl.title"></a>
+						</h1>
+						<ul class="recommand-list">
+							<li v-for="(item,index) in filterGirl">
+								<a class="booksInd" href="">
+									<img alt="item.title" :src="item.cover">
+									<div class="booKDes">
+										<h3 class="bookTitle" v-text="item.title"></h3>
+										<p class="bookAuthor" v-text="item.authors">无双</p>
+										<p class="bookInfo" v-text="item.summary"></p>
+										<div class="bookType">
+											<b  v-for="tag in item.categories" v-text="tag.label"></b>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="displayBox">
+							<a href="" class="more">换一换</a>
+							<a href="" class="more">查看全部</a>
+						</div>
+					</article>
+					<article id="boyLike" class="showByList">
+						<h1>
+							<a v-text="girl.title"></a>
+						</h1>
+						<ul class="recommand-list">
+							<li v-for="(item,index) in filterBoy">
+								<a class="booksInd" href="">
+									<img alt="item.title" :src="item.cover">
+									<div class="booKDes">
+										<h3 class="bookTitle" v-text="item.title"></h3>
+										<p class="bookAuthor" v-text="item.authors">无双</p>
+										<p class="bookInfo" v-text="item.summary"></p>
+										<div class="bookType">
+											<b  v-for="tag in item.categories" v-text="tag.label"></b>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="displayBox">
+							<a href="" class="more">换一换</a>
+							<a href="" class="more">查看全部</a>
+						</div>
+					</article>
+					<article id="free"  class="showByTabel">
+						<h1 v-text="hotBookList.title"></h1>
+						<ul class="hotTable">
+							<li v-for="(item,index) in filterFree">
+								<a href="">
+									<div class="book-cover" data-id="42312" id="Tag__4">
+										<img alt="都市之最强纨绔" :src="item.cover">
+									</div>
+									<h3 class="bookName" v-text="item.title"></h3>
+								</a>
+							</li>
+						</ul>
+						<a class="more">查看更多</a>
+					</article>
+					<article id="all" class="showByList">
+						<ul class="recommand-list">
+							<li v-for="(item,index) in filterspecial">
+								<a class="booksInd" href="">
+									<img alt="item.title" :src="item.cover">
+									<div class="booKDes">
+										<h3 class="bookTitle" v-text="item.title"></h3>
+										<p class="bookAuthor" v-text="item.authors">无双</p>
+										<p class="bookInfo" v-text="item.summary"></p>
+										<div class="bookType">
+											<b  v-for="tag in item.categories" v-text="tag.label"></b>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</article>
+					<div id="PullUp" class="scroller-pullUp" style="display: none;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring">
+							<rect x="0" y="0" width="100" height="100" fill="none" class="bk"/>
+							<circle cx="50" cy="50" r="40" stroke-dasharray="163.36281798666926 87.9645943005142" stroke="#ddd" fill="none" stroke-width="20" transform="rotate(80.1696 50 50)">
+								<animateTransform attributeName="transform" type="rotate" values="0 50 50;180 50 50;360 50 50;" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite" begin="0s"/>
+							</circle>
+						</svg>
+			            <span id="pullUp-msg" class="pull-up-msg">上拉加载</span>
+			        </div>
+			</div>
 		</section>
 	</div>
 	<script src="js/lib/zepto.js"></script>
 	<script src="js/lib/vue2.min.js"></script>
 	<script src="js/lib/vue-resource.min.js"></script>
+	<script src="js/lib/iscroll.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-probe.js"></script>
 	<script src="js/index.js"></script>
+	<!--<script src="js/renderData.js"></script>-->
+	
 	
 </body>
 </html>
