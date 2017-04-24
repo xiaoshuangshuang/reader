@@ -1,7 +1,72 @@
 var myScroll;
-$(function(){
-	
-})
+function loaded(){
+	myScroll = new IScroll('#main',{ 
+		probeType: 2,
+		mouseWheel: true,
+		preventDefault: false,
+		fadeScrollbars: true
+	});
+	var main=document.getElementById('main');
+	main.addEventListener('touchmove', function (e) {
+		e.preventDefault(); 
+	}, false);
+	loadreflesh();
+}
+
+function loadreflesh(){
+	var pullDown = $('#PullDown');
+	var pullUp = $('#PullUp');
+	var isPulled = false;
+		myScroll.refresh();
+		myScroll.on('scroll', function() {
+			var height = this.y,
+				bottomHeight = this.maxScrollY - height;
+			console.log("height:" + height);
+			console.log()
+		
+			// 控制下拉显示
+			if(height >= 30) {
+				pullDown.show();
+		
+				setTimeout(function() {
+					pullDown.hide();
+				}, 1500)
+				isPulled = true;
+				return;
+			}
+			var timer = null;
+			// 控制上拉显示
+			clearTimeout(timer);
+			if(bottomHeight >= 10) {
+				if(vm.specialLimit >= vm.special.data.length) {
+					vm.noMore=true;
+					clearTimeout(timer);
+					return;
+				}else{
+					pullUp.show();
+					time = setTimeout(function() {
+						console.log(vm.specialLimit >= vm.special.data.length);
+						if(vm.specialLimit + 5 >= vm.special.data.length) {
+							vm.specialLimit = vm.special.data.length;
+						} else {
+							vm.specialLimit += 5;
+						}
+						pullUp.hide();
+						myScroll.refresh();
+						isPulled = true;
+					}, 5000)
+				}
+				return;
+			}
+		})
+		myScroll.on('scrollEnd', function() { // 滚动结束
+			myScroll.refresh();
+			if(isPulled) { // 如果达到触发条件，则执行加载
+				isPulled = false;
+				
+			}
+		});
+}
 window.vm = new Vue({
 	el:'#root',//app元素中所有的元素都能被vue操控
 	data:{
@@ -38,82 +103,18 @@ window.vm = new Vue({
 		},
 		limit:5,
 		specialLimit:5,
+		noMore:false
 	},
 	mounted:function(){//实例化编译完成后默认要执行的方法
 		this.$nextTick(function(){//代码保证this.$el在document中
 			this.initBookList();
-			myScroll = new IScroll('#main',{ 
-				probeType: 3,
-				mouseWheel: true,
-		        preventDefault: false,
-		        fadeScrollbars: true
-			});
-			myScroll.refresh();
-			document.addEventListener('touchmove', function (e) {
-				e.preventDefault(); 
-			}, false);
-			document.addEventListener('mousewheel', function (e) {
-				myScroll.refresh();
-			}, false);
-			document.addEventListener('touchstart', function (e) {
-				myScroll.refresh();
-			}, false);
-			var pullDown = $('#PullDown');
-			var pullUp = $('#PullUp');
-			var isPulled = false;
-			myScroll.on('scroll', function() {
-				
-			    var height = this.y,bottomHeight = this.maxScrollY - height;
-			    console.log("height:"+height);
-			    console.log()
-				
-		        // 控制下拉显示
-		        if (height >= 30) {
-		        	pullDown.show();
-		        	
-		        	setTimeout(function(){
-		        		pullDown.hide();
-		        	},1500)
-		            isPulled = true;
-		            return;
-		        }
-				var timer=null;
-		        // 控制上拉显示
-		        if (bottomHeight >= 30) {
-		            pullUp.show();
-		            if(vm.specialLimit>=vm.special.data.length){
-		            		pullUp.innerHTML="暂无数据";
-		            		clearTimeout(timer);
-		            		return;
-		            }
-		            
-		            time=setTimeout(function(){
-		            	console.log(vm.specialLimit>=vm.special.data.length);
-		            	
-		            	vm.specialLimit+=5;
-		            	if(vm.specialLimit+5>=vm.special.data.length){
-		            		vm.specialLimit=vm.special.data.length;	
-		            	}else{
-		            		vm.specialLimit+=5;
-		            	}
-		            	pullUp.hide();
-		        		myScroll.refresh();
-		        	},5000)
-		            isPulled = true;
-		            return;
-		        }
-			})
-			myScroll.on('scrollEnd', function() { // 滚动结束
-				myScroll.refresh();
-			    if (isPulled) { // 如果达到触发条件，则执行加载
-			        isPulled = false;
-			        vm.$forceUpdate();
-			    }
-			});	
+			loaded();
+			
 		})
 	},
 	computed:{
 		filteredRItems: function(){
+			
 			return this.recommand.data.slice(0,this.limit);
 		},
 		filterGirl:function(){
@@ -166,8 +167,23 @@ window.vm = new Vue({
 				}
 			})
 		},
-		init:function(event){
-			alert(111)
+		changeTab:function(index){
+			if(index==1){
+				this.show=true;
+				
+			}else{
+				this.show=false;
+			}
 		},
+		changeBook:function(books){
+			var i = books.length,t,j;
+			while(i){
+				j= Math.floor(Math.random()*i--);
+				t= books[i];
+				books[i]=books[j];
+				books[j]=t;
+			}
+			return books;
+		}
 	}
 })

@@ -22,7 +22,7 @@
 		</header>
 		<div id="scroll">
 			
-					<section class="main" id="main" v-hide="show===false" v-show="show===true" @swipeLeft="changeTabContent(1)">
+					<section class="main" id="main" v-hide="show===false" v-show="show===true">
 							<div>
 								<div id="PullDown" class="scroller-pullDown" style="display: none;">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring">
@@ -143,7 +143,7 @@
 												<img alt="item.title" :src="item.cover">
 												<div class="booKDes">
 													<h3 class="bookTitle" v-text="item.title"></h3>
-													<p class="bookAuthor" v-text="item.authors"></p>
+													<p class="bookAuthor" v-text="item.authors">无双</p>
 													<p class="bookInfo" v-text="item.summary"></p>
 													<div class="bookType">
 														<b  v-for="tag in item.categories" v-text="tag.label"></b>
@@ -153,7 +153,7 @@
 										</li>
 									</ul>
 									<div class="displayBox">
-										<a href="javascript:void(0)" class="more" @click="changeBook(boy.data)">换一换</a>
+										<a href="" class="more">换一换</a>
 										<a href="" class="more">查看全部</a>
 									</div>
 								</article>
