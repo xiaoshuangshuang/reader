@@ -103,17 +103,14 @@ window.vm = new Vue({
 		},
 		limit:5,
 		specialLimit:5,
-		noMore:false
-	},
-	beforeCreate:function(){
-		setTimeout(function(){
-			$('.modal').remove();
-		},1000)
+		noMore:false,
+		remove:false
 	},
 	mounted:function(){//实例化编译完成后默认要执行的方法
 		this.$nextTick(function(){//代码保证this.$el在document中
 			this.initBookList();
 			loaded();
+			
 		})
 	},
 	computed:{
@@ -136,35 +133,36 @@ window.vm = new Vue({
 	},
 	methods:{//所有事件的绑定
 		initBookList:function(){
-			this.$http.get("data/readList.json").then(res=>{
+			var _this = this;
+			this.$http.get("data/readList.json").then(function(res){
 				//es6中箭头函数的this指向其父级
 				var list=res.body.items;
-				this.hotBookList = {
+				_this.hotBookList = {
 					title:list[1].ad_name,
 					data:list[1].data.data,
 					dataCount:list[1].data.count,
 				};
-				this.recommand ={
+				_this.recommand ={
 					title:list[2].ad_name,
 					data:list[2].data.data,
 					dataCount:list[2].data.count,
 				}
-				this.girl ={
+				_this.girl ={
 					title:list[3].ad_name,
 					data:list[3].data.data,
 					dataCount:list[3].data.count,
 				}
-				this.boy ={
+				_this.boy ={
 					title:list[4].ad_name,
 					data:list[4].data.data,
 					dataCount:list[4].data.count,
 				}
-				this.free={
+				_this.free={
 					title:list[5].ad_name,
 					data:list[5].data.data,
 					dataCount:list[5].data.count,
 				}
-				this.special={
+				_this.special={
 					title:list[3].ad_name,
 					data:list[3].data.data,
 					dataCount:list[3].data.count,
