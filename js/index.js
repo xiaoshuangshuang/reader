@@ -1,9 +1,4 @@
 var myScroll;
-(function(){
-	setTimeout(function(){
-		$('.modal').remove();
-	},1000)
-})();
 function loaded(){
 	myScroll = new IScroll('#main',{ 
 		probeType: 2,
@@ -109,6 +104,11 @@ window.vm = new Vue({
 		limit:5,
 		specialLimit:5,
 		noMore:false
+	},
+	beforeCreate:function(){
+		setTimeout(function(){
+			$('.modal').remove();
+		},1000)
 	},
 	mounted:function(){//实例化编译完成后默认要执行的方法
 		this.$nextTick(function(){//代码保证this.$el在document中
