@@ -69,7 +69,7 @@
 									<h1 v-text="hotBookList.title"></h1>
 									<ul class="hotTable">
 										<li v-for="(item,index) in hotBookList.data">
-											<a href="">
+											<a href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<div class="book-cover" data-id="42312" id="Tag__4">
 													<img alt="都市之最强纨绔" :src="item.cover">
 												</div>
@@ -86,7 +86,7 @@
 									</h1>
 									<ul class="recommand-list">
 										<li v-for="(item,index) in filteredRItems">
-											<a v-if="index===0" class="booksInd" href="">
+											<a v-if="index===0" class="booksInd" href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<img alt="item.title" :src="item.cover">
 												<div class="booKDes">
 													<h3 class="bookTitle" v-text="item.title"></h3>
@@ -97,7 +97,7 @@
 													</div>
 												</div>
 											</a>
-											<a v-else="index !==0" class="bookAbout" href="">
+											<a v-else="index !==0" class="bookAbout"  href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<span class="bookIndex" v-text="index">02</span>
 												<span class="bookTitle" v-text="item.title">狂武战帝</span>
 												<span class="bookAuthor" v-text="item.authors">被罚站的豆豆</span>
@@ -115,7 +115,7 @@
 									</h1>
 									<ul class="recommand-list">
 										<li v-for="(item,index) in filterGirl">
-											<a class="booksInd" href="">
+											<a class="booksInd"  href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<img alt="item.title" :src="item.cover">
 												<div class="booKDes">
 													<h3 class="bookTitle" v-text="item.title"></h3>
@@ -139,7 +139,7 @@
 									</h1>
 									<ul class="recommand-list">
 										<li v-for="(item,index) in filterBoy">
-											<a class="booksInd" href="">
+											<a class="booksInd"  href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<img alt="item.title" :src="item.cover">
 												<div class="booKDes">
 													<h3 class="bookTitle" v-text="item.title"></h3>
@@ -161,7 +161,7 @@
 									<h1 v-text="free.title"></h1>
 									<ul class="hotTable">
 										<li v-for="(item,index) in filterFree">
-											<a href="">
+											<a  href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<div class="book-cover" data-id="42312" id="Tag__4">
 													<img alt="都市之最强纨绔" :src="item.data.cover">
 												</div>
@@ -174,7 +174,7 @@
 								<article id="all" class="showByList">
 									<ul class="recommand-list">
 										<li v-for="(item,index) in filterspecial">
-											<a class="booksInd" href="">
+											<a class="booksInd"  href="javascript:void(0)" onclick="window.location.href='detail.html'">
 												<img alt="item.title" :src="item.cover">
 												<div class="booKDes">
 													<h3 class="bookTitle" v-text="item.title"></h3>
@@ -207,7 +207,7 @@
 							<article class="showByList">
 								<ul class="recommand-list">
 									<li v-for="(item,index) in filterGirl">
-										<a v-if="index<=2" class="booksInd" href="">
+										<a v-if="index<=1" class="booksInd"  href="javascript:void(0)" onclick="window.location.href='detail.html'">
 											<img alt="item.title" :src="item.cover">
 											<div class="booKDes">
 												<h3 class="bookTitle" v-text="item.title"></h3>

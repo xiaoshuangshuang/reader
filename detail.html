@@ -7,221 +7,92 @@
     <title>读书</title> 
     <link rel="stylesheet" href="style/reset.css" />
     <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/detail.css" />
 </head>
 <body>
 	<div id="root">
 		<header class="headerbg">
-			<em class="header-checkin"></em>
+			<em class="header-checkin" onclick="window.history.go(-1);">&lt;&nbsp;&nbsp;超级教师</em>
 			<div class="headerTab">
 				<div class="headerTabWrap">
-					<div class="tab" @click="changeTab(1)" >书城</div>
-					<div class="tab" @click="changeTab(2)">书架</div>
+					
 				</div>
 			</div>
-			<em class="headerUser"></em>
+			<em class="headerUser" onclick="window.location.href='index.html'"></em>
 		</header>
 		<div id="scroll">
-			
-					<section class="main" id="main" v-hide="show===false" v-show="show===true">
+					<section class="main" id="main">
 							<div>
-								<div id="PullDown" class="scroller-pullDown" style="display: none;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring">
-										<rect x="0" y="0" width="100" height="100" fill="none" class="bk"/>
-										<circle cx="50" cy="50" r="40" stroke-dasharray="163.36281798666926 87.9645943005142" stroke="#ddd" fill="none" stroke-width="20" transform="rotate(80.1696 50 50)">
-											<animateTransform attributeName="transform" type="rotate" values="0 50 50;180 50 50;360 50 50;" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite" begin="0s"/>
-										</circle>
-									</svg>
-						            <p id="pullDown-msg" class="pull-down-msg">下拉刷新</p>
-						      	</div>
-								<article id="topHome">
-									<div id="search">输入书名/关键字</div>
-									<div class="banner ">
-										<div class="">
-											<a href="">
-												<img class="cover" src="http://t1.market.xiaomi.com/thumbnail/jpeg/l640/Duokan/0e7a88448e66d41e803d3b6b276c04e48911c788c?">
+								<article class="showByList bookDetail">
+									<ul class="recommand-list">
+										<li>
+											<a class="booksInd" href="javascript:void(0)">
+												<img alt="item.title" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01eKkHyWGZy/H94v5MgmJoSqd9.jpg!s">
+												<div class="booKDes">
+													<h3 class="bookTitle">超级教师</h3>
+													<p class="bookAuthor">作者</p>
+													<div class="u-grade">
+														<div class="grade grade8"></div>
+														<span class="read">246个评价</span>
+													</div>
+													<p class="bookPrice">价格：5书币/千字</p>
+													<p class="bookNum">字数：344万字 <span>连载中</span></p>	
+												</div>
 											</a>
-										</div>
-									</div>
-									<ul class="topHomeBtn">
-										<li data-href="#page=channel&amp;id=371" data-title="免费">
-											<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p015iBxwdkmU/5wc5uzYhLZ7iVa.png">
-											<p class="top-home__des">免费</p>
-										</li>
-										<li data-href="#page=channel&amp;id=370" data-title="女生">
-											<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01LWZmXGCpy/aSrSq6Llgt9PqE.png">
-											<p class="top-home__des">女生</p>
-										</li>
-										<li data-href="#page=channel&amp;id=369" data-title="男生">
-											<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01lq7mbkaEJ/OGlv1em8buXDgB.png">
-											<p class="top-home__des">男生</p>
-										</li>
-										<li data-href="/hs/market/cate" data-title="分类">
-											<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p01pz5NtyRI0/2ENONnvOg23NXM.png">
-											<p class="top-home__des">分类</p>
-										</li>
-										<li data-href="/hs/market/rank" data-title="排行">
-											<img class="top-home__icon" src="http://image.read.duokan.com/mfsv2/download/s010/p010kK7M5VyH/8kPz9nKvRXyu1k.png">
-												<p class="top-home__des">排行</p>
+											<div class="btn">
+												<a href="javascript:void(0)" onclick="window.location.href='reader.html'" class="btnItem">开始阅读</a>
+												<a href="" class="btnItem">下载</a>
+											</div>
+											<p class="bookInfo">
+												特战兵王许乐回归都市，各色美女蜂拥而至，且看他如何翻云覆雨，天下无敌。
+												“老子的学生不准其他人欺负，老子的女人更不容其他人染指！”老兵不死，仅仅隐退。这是一本属于男人的热血故事。
+											</p>
 										</li>
 									</ul>
+									<div class="showByTabel">
+										<a class="more">最新：第1652章 童子军！更新于10小时前</a>
+									</div>
+								</article>
+								<article class="showByList bookTypeTag">
+									<h3>类别标签</h3>
+									<div class="brand">
+										<div class="brandItem">都市</div><div class="brandItem">异能超能</div>	
+									</div>
 								</article>
 								<article id="hot"  class="showByTabel">
-									<h1 v-text="hotBookList.title"></h1>
+									<h2>喜欢这本书的人也喜欢</h2>
 									<ul class="hotTable">
-										<li v-for="(item,index) in hotBookList.data">
+										<li>
 											<a href="">
 												<div class="book-cover" data-id="42312" id="Tag__4">
-													<img alt="都市之最强纨绔" :src="item.cover">
+													<img alt="花都全能狂少" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01aixRx0t73/LqIITN9fup7Sb9.jpg!s">
 												</div>
-												<h3 class="bookName" v-text="item.title"></h3>
+												<h3 class="bookName" >花都全能狂少</h3>
 											</a>
 										</li>
-									</ul>
-									<a class="more">查看更多</a>
-								</article>
-								<article id="recommand" class="showByList">
-									<h1>
-										<a>{{recommand.title}} <b class="brand">推</b></a>
-										<a class="right"><b>男</b><b>女</b></a>
-									</h1>
-									<ul class="recommand-list">
-										<li v-for="(item,index) in filteredRItems">
-											<a v-if="index===0" class="booksInd" href="">
-												<img alt="item.title" :src="item.cover">
-												<div class="booKDes">
-													<h3 class="bookTitle" v-text="item.title"></h3>
-													<p class="bookAuthor" v-text="item.authors">无双</p>
-													<p class="bookInfo" v-text="item.summary"></p>
-													<div class="bookType">
-														<b  v-for="tag in item.categories" v-text="tag.label"></b>
-													</div>
-												</div>
-											</a>
-											<a v-else="index !==0" class="bookAbout" href="">
-												<span class="bookIndex" v-text="index">02</span>
-												<span class="bookTitle" v-text="item.title">狂武战帝</span>
-												<span class="bookAuthor" v-text="item.authors">被罚站的豆豆</span>
-											</a>
-										</li>
-									</ul>
-									<div class="displayBox">
-										<a href="" class="more">换一换</a>
-										<a href="" class="more">查看全部</a>
-									</div>
-								</article>
-								<article id="girlLike" class="showByList">
-									<h1>
-										<a v-text="girl.title"></a>
-									</h1>
-									<ul class="recommand-list">
-										<li v-for="(item,index) in filterGirl">
-											<a class="booksInd" href="">
-												<img alt="item.title" :src="item.cover">
-												<div class="booKDes">
-													<h3 class="bookTitle" v-text="item.title"></h3>
-													<p class="bookAuthor" v-text="item.authors"></p>
-													<p class="bookInfo" v-text="item.summary"></p>
-													<div class="bookType">
-														<b  v-for="tag in item.categories" v-text="tag.label"></b>
-													</div>
-												</div>
-											</a>
-										</li>
-									</ul>
-									<div class="displayBox">
-										<a href="" class="more">换一换</a>
-										<a href="" class="more">查看全部</a>
-									</div>
-								</article>
-								<article id="boyLike" class="showByList">
-									<h1>
-										<a v-text="boy.title"></a>
-									</h1>
-									<ul class="recommand-list">
-										<li v-for="(item,index) in filterBoy">
-											<a class="booksInd" href="">
-												<img alt="item.title" :src="item.cover">
-												<div class="booKDes">
-													<h3 class="bookTitle" v-text="item.title"></h3>
-													<p class="bookAuthor" v-text="item.authors">无双</p>
-													<p class="bookInfo" v-text="item.summary"></p>
-													<div class="bookType">
-														<b  v-for="tag in item.categories" v-text="tag.label"></b>
-													</div>
-												</div>
-											</a>
-										</li>
-									</ul>
-									<div class="displayBox">
-										<a href="" class="more">换一换</a>
-										<a href="" class="more">查看全部</a>
-									</div>
-								</article>
-								<article id="free"  class="showByTabel">
-									<h1 v-text="free.title"></h1>
-									<ul class="hotTable">
-										<li v-for="(item,index) in filterFree">
+										<li>
 											<a href="">
 												<div class="book-cover" data-id="42312" id="Tag__4">
-													<img alt="都市之最强纨绔" :src="item.data.cover">
+													<img alt="超品侠侣" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01N5BU14yRb/Mst90zUjVmMNG2.jpg!s">
 												</div>
-												<h3 class="bookName" v-text="item.data.title"></h3>
+												<h3 class="bookName" >超品侠侣</h3>
 											</a>
 										</li>
-									</ul>
-									<a class="more">查看更多</a>
-								</article>
-								<article id="all" class="showByList">
-									<ul class="recommand-list">
-										<li v-for="(item,index) in filterspecial">
-											<a class="booksInd" href="">
-												<img alt="item.title" :src="item.cover">
-												<div class="booKDes">
-													<h3 class="bookTitle" v-text="item.title"></h3>
-													<p class="bookAuthor" v-text="item.authors">无双</p>
-													<p class="bookInfo" v-text="item.summary"></p>
-													<div class="bookType">
-														<b  v-for="tag in item.categories" v-text="tag.label"></b>
-													</div>
+										<li>
+											<a href="">
+												<div class="book-cover" data-id="42312" id="Tag__4">
+													<img alt="透视小邪医" src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01qNUea9Kjw/vYBzDKpAVcm5eU.jpg!s">
 												</div>
+												<h3 class="bookName" >透视小邪医</h3>
 											</a>
 										</li>
 									</ul>
 								</article>
-								<div class="nomore" v-show="noMore">暂无数据</div>
-								<div id="PullUp" class="scroller-pullUp" style="display: none;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring">
-										<rect x="0" y="0" width="100" height="100" fill="none" class="bk"/>
-										<circle cx="50" cy="50" r="40" stroke-dasharray="163.36281798666926 87.9645943005142" stroke="#ddd" fill="none" stroke-width="20" transform="rotate(80.1696 50 50)">
-											<animateTransform attributeName="transform" type="rotate" values="0 50 50;180 50 50;360 50 50;" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite" begin="0s"/>
-										</circle>
-									</svg>
-						            <span id="pullUp-msg" class="pull-up-msg">上拉加载</span>
-						        </div>
+								<div class="copyRight">
+									<p>图书信息</p>
+									<p>版权：阅文集团旗下创世中文网</p>
+								</div>
 							</div>
-					</section>
-
-					<section id="smain" class="main" v-hide="show===true" v-show="show===false">
-						<div class="tabContent">
-							<div id="search">输入书名/关键字222</div>
-							<article class="showByList">
-								<ul class="recommand-list">
-									<li v-for="(item,index) in filterGirl">
-										<a v-if="index<=2" class="booksInd" href="">
-											<img alt="item.title" :src="item.cover">
-											<div class="booKDes">
-												<h3 class="bookTitle" v-text="item.title"></h3>
-												<p class="bookAuthor" v-text="item.authors">无双</p>
-												<p class="bookInfo" v-text="item.summary"></p>
-												<div class="bookType">
-													<b  v-for="tag in item.categories" v-text="tag.label"></b>
-												</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-							</article>
-						</div>
 					</section>
 			
 		</div>
@@ -231,9 +102,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-probe.js"></script>
 	<script src="js/lib/vue2.min.js"></script>
 	<script src="js/lib/vue-resource.min.js"></script>
-	<script src="js/index.js"></script>
-	<!--<script src="js/renderData.js"></script>-->
-	
+	<script src="js/detail.js"></script>
 	
 </body>
 </html>
